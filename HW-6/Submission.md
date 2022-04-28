@@ -7,33 +7,34 @@ Save and submit the completed file for your homework submission.
 **Step 1: Shadow People** 
 
 1. Create a secret user named `sysd`. Make sure this user doesn't have a home folder created:
-    - `Your solution command here`
-[](/Image/Codeception.PNG)
-
+    - sudo adduser sysd --no-create-home
 2. Give your secret user a password: 
-    - `Your solution command here`
-
+    - sysd
+    - very easy to remember...
 3. Give your secret user a system UID < 1000:
-    - `Your solution command here`
-
+    - usermod -u 47 sysd
 4. Give your secret user the same GID:
-   - `Your solution command here`
-
+   - groupmod -g 47 sysd
 5. Give your secret user full `sudo` access without the need for a password:
-   -  `Your solution command here`
-
+   - 
+   
+        -visudo    
+        -Add at the bottom:
+        -sysd all=(all) NOPASSWD:ALL
+![Edit_Sudoers_Step1_Q5](/HW-6/Edit_Sudoers_Step1_Q5.png)
 6. Test that `sudo` access works without your password:
+![Sudo-L_Step1_Q6](/HW-6/Sudo-L_Step1_Q6.png)
 
-    ```bash
-    Your bash commands here
-    ```
+        sudo cat /etc/shadow
+        sudo visudo
+        None of them required a password.
 
 **Step 2: Smooth Sailing**
 
 1. Edit the `sshd_config` file:
 
     ```bash
-    Your bash commands here
+    
     ```
 
 **Step 3: Testing Your Configuration Update**
