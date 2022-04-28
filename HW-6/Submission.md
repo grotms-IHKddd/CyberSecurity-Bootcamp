@@ -21,9 +21,9 @@ Save and submit the completed file for your homework submission.
         -visudo    
         -Add at the bottom:
         -sysd all=(all) NOPASSWD:ALL
-![Edit_Sudoers_Step1_Q5](/HW-6/Edit_Sudoers_Step1_Q5.png)
+![Edit_Sudoers_Step1_Q5](/HW-6/Image/Edit_Sudoers_Step1_Q5.png)
 6. Test that `sudo` access works without your password:
-![Sudo-L_Step1_Q6](/HW-6/Sudo-L_Step1_Q6.png)
+![Sudo-L_Step1_Q6](/HW-6/Image/Sudo-L_Step1_Q6.png)
 
         sudo cat /etc/shadow
         sudo visudo
