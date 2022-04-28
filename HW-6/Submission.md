@@ -63,12 +63,15 @@ Save and submit the completed file for your homework submission.
 
 1. SSH back to the system using your `sysd` account and port `2222`:
 
-    - `Your solution command here`
+    - ssh sysd@192.168.6.105 -p 2222
 
 2. Escalate your privileges to the `root` user. Use John to crack the entire `/etc/shadow` file:
 
-    - `Your solution command here`
+    - sudo su root
+    
+        john /etc/shadow
 
+![John_The_Ripper_Step4_Q1.png](/HW-6/Image/John_The_Ripper_Step4_Q2.png)
 ---
 
 © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
