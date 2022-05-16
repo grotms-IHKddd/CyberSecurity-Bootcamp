@@ -25,6 +25,22 @@ Phase 3.
 
 - After exiting the computer we verified that the IP address in the /etc/hosts was not registered to the same domain as rollingstone.com using nslookup. 
 
-            "nslookup 98.137.246.8"
+        "nslookup 98.137.246.8"
 - We recieved confirmation that this address the computer was automatically being sent to was not registered to rollingstone.com. Nslookup returned it as unknown. Obviously the DNS poisoning needs to be removed from /etc/hosts and again the ssh on port 22 needs to be closed. This all seems to have occured on the OSI layer 7.
 - ![](/HW-8/Image/HW8_Phase_3-3.png)
+
+Phase 4.
+
+- I were directed to search /etc because that is where we found the hosts file that had been DNS poisoned. After running the find command to look for text files in /etc we found a text file titled 'packetcaptureinfo.txt'. Opening the file with cat we found that the file linked to a google drive folder.
+
+        "find /etc -type f -name '*.txt'
+- ![](/HW-8/Image/HW_Phase_4.png)
+
+        "cat /etc/packetcaptureinfo.txt"
+- ![](/HW-8/Image/HW_Phase_4-2.png)
+- I opened the google folder and downloaded the pcap file secretlogs.pcapng to open in wireshark. 
+- ![](/HW-8/Image/HW8_Phase_4-3.png)
+- I found two things that were concerning within the packet file. The first thing that concerned me was that appeared that one of the mac addresses were spoofed, which would allow the network traffic to be spied on. See picture below. The best way to prevent this from happening would be to create static ARP entries, instead of allowing dynamic ARP entries. Assigning static ARP entries would lock every device to one mac/IP address on the network. ARP occurs on the second layer of the OSI networking model.
+- ![](/HW-8/Image/HW8_Phase_4-4.png)
+- The final thing that I found in the packet capture occured in the HTTP protocol packets on the application layer of the OSI model. It connected and downloaded multiple things including accessing a logging agent and getting a javascript application. Because it happened on http and not https it isn't secure and http shouldn't be enabled at all. More importantly the downloading of a potentially malicious application that could have logging capabilities is very concerning. Rockstar corp should probably look at disabling or atleast limiting the access to unsecure downloading of apps. Picture of the wireshark packet is below.
+![](/HW-8/Image/HW8_Phase_4-5.png)
