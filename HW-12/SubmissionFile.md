@@ -11,30 +11,31 @@ Answer the following questions about the HTTP request and response process.
 
 
 1. What type of architecture does the HTTP request and response process occur in?
-
+Client-Server Architecture
 
 2. What are the different parts of an HTTP request?
-
+Request Line, Request Header and Request Body
 
 3. Which part of an HTTP request is optional?
-
+Body
 
 4. What are the three parts of an HTTP response?
-
+Status Line, Response Header, and response body
 
 5. Which number class of status codes represents errors?
-
+400 and 500. 400 for client errors, while 500 indicate server side errors.
 
 6. What are the two most common request methods that a security professional will encounter?
-
+Get and Posts
 
 7. Which type of HTTP request method is used for sending data?
-
+Post
 
 8. Which part of an HTTP request contains the data being sent to the server?
-
+Request Body
 
 9. In which part of an HTTP response does the browser receive the web code to generate and style a web page?
+Response Body
 
 ## Using Curl
 
@@ -42,19 +43,19 @@ Answer the following questions about curl:
 
 
 10. What are the advantages of using curl over the browser?
-
+Allows us to send customized HTTP requests, doesn't require a browser and, since it's a CLI tool, it can be used in conjunction with other CLI commands. 
 
 11. Which curl option is used to change the request method?
-
+-X
 
 12. Which curl option is used to set request headers?
-
+-H
 
 13. Which curl option is used to view the response header?
-
+--Head
 
 14. Which request method might an attacker use to figure out which HTTP requests an HTTP server will accept?
-
+OPTIONS
 ## Sessions and Cookies
 
 Recall that HTTP servers need to be able to recognize clients from one another. They do this through sessions and cookies.
@@ -63,7 +64,7 @@ Answer the following questions about sessions and cookies:
 
 
 15. Which response header sends a cookie to the client?
-
+Set-Cookie
         HTTP/1.1 200 OK
         Content-type: text/html
         Set-Cookie: cart=Bob
@@ -71,7 +72,7 @@ Answer the following questions about sessions and cookies:
 
 
 16. Which request header will continue the client's session?
-
+Cookie
         GET /cart HTTP/1.1
         Host: www.example.org
         Cookie: cart=Bob
@@ -94,16 +95,16 @@ Look through the following example HTTP request and response and answer the foll
         username=Barbara&password=password
 
 17. What is the request method?
-
+Post
 
 18. Which header expresses the client's preference for an encrypted response?
-
+Upgrade-Insecure-Requests: 1
 
 19. Does the request have a user session associated with it?
-
+No, becaue no cookie is referenced in the header.
 
 20. What kind of data is being sent from this request body?
-
+Login Credentials Username and Password
 ## HTTP Response
 
         HTTP/1.1 200 OK
@@ -122,18 +123,19 @@ Look through the following example HTTP request and response and answer the foll
         [page content]
 
 21. What is the response status code?
-
+200
 
 22. What web server is handling this HTTP response?
-
+Apache
 
 23. Does this response have a user session associated to it?
-
+5
 
 24. What kind of content is likely to be in the [page content] response body?
-
+Text/HTML
 
 25. If your class covered security headers, what security request headers have been included?
+Strict-Transport-Security, X-XSS-Protection, X-Frame-Options, X-Content-Type
 
 ## Monoliths and Microservices
 
@@ -141,7 +143,7 @@ Answer the following questions about monoliths and microservices:
 
 
 26. What are the individual components of microservices called?
-
+Services
 
 27. What is a service that writes to a database and communicates to other services?
 
@@ -155,10 +157,10 @@ Answer the following questions about multi-container deployment:
 
 
 29. What tool can be used to deploy multiple containers at once?
-
+A Script
 
 30. What kind of file format is required for us to deploy a container set?
-        
+YML        
 ## Databases
 
 31. Which type of SQL query would we use to see all of the information within a table called customers?
@@ -168,7 +170,7 @@ Answer the following questions about multi-container deployment:
 
 
 33. Why would we never run DELETE FROM <table-name>; by itself?
-
+It would delete the entire database, and has no safeguards to confirm or stop it.
 ---
 
 ## Bonus Challenge Instructions: The Cookie Jar
