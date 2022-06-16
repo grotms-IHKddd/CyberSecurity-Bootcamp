@@ -45,3 +45,4 @@ Phase 4.
 - The final thing that I found in the packet capture occurred in the HTTP protocol packets on the application layer of the OSI model. It connected and downloaded multiple things including accessing a logging agent and getting a javascript application. Because it happened on http and not https it isn't secure and http shouldn't be enabled at all. More importantly the downloading of a potentially malicious application that could have logging capabilities is very concerning. Rockstar corp should probably look at disabling or at least limiting the access to unsecure downloading of apps. Picture of the wireshark packet is below.
 ![](/HW-8/Image/HW8_Phase_4-5.png)
 
+© 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
