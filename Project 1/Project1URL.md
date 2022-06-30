@@ -1,3 +1,3 @@
 Cybersecurity Blog:
 
-        [My First Project/]{https://smithsecurityblog.azurewebsites.net/}
+[My First Project/]{https://smithsecurityblog.azurewebsites.net/}
