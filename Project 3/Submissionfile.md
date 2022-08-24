@@ -149,14 +149,14 @@ Dashboard:
 
 <h2> Summary & Mitagation: </h2>
 
-        In conclusion, someone attempted to maliciously brute force or dictionary attack the windows login at 2a.m. on march 25th. The threat actor then tried to reset passwords to gain access to the accounts at approximately 8a.m. Two accounts in particular were targeted, User_A and User_K
-        We also believe that someone engaged in an HTTP flood attack beginning at 5-6pm with HTTP GET request. The attack then switched between 7-8pm to HTTP POST requests. The DDoS attack possibly used a compromised chef client server and the goal was to hinder access to the website by stopping people from using the VSI_Account_logon page.
-        We believe this attack originated from ukraine based on IP location data, and the fact that the attacks would have begun between 9 and 10 a.m. Ukrainian time.
+In conclusion, someone attempted to maliciously brute force or dictionary attack the windows login at 2a.m. on march 25th. The threat actor then tried to reset passwords to gain access to the accounts at approximately 8a.m. Two accounts in particular were targeted, User_A and User_K
+We also believe that someone engaged in an HTTP flood attack beginning at 5-6pm with HTTP GET request. The attack then switched between 7-8pm to HTTP POST requests. The DDoS attack possibly used a compromised chef client server and the goal was to hinder access to the website by stopping people from using the VSI_Account_logon page.
+We believe this attack originated from ukraine based on IP location data, and the fact that the attacks would have begun between 9 and 10 a.m. Ukrainian time.
 
 <h3> Windows Mitigation: </h3>
 
-        The windows systems password policy needs to become more strict. We believe that changing the lockout policy to escalate the lockout time after multiple failed attempts to login would be the best. Also if they are locked out more than twice in a given time span VSI should require the user to contact IT before attempting to login again. We also should suggest that VSI implement a policy that user password resets must be done through IT rather than leaving the option to user as the second attack clearly showed they attempted to reset a password.
+The windows systems password policy needs to become more strict. We believe that changing the lockout policy to escalate the lockout time after multiple failed attempts to login would be the best. Also if they are locked out more than twice in a given time span VSI should require the user to contact IT before attempting to login again. We also should suggest that VSI implement a policy that user password resets must be done through IT rather than leaving the option to user as the second attack clearly showed they attempted to reset a password.
 
 <h3> Apache Mitigation: </h3>
 
-        Apache web server has several different modules that can be used to mitigate DDoS attacks. One method is to require captcha tests for new HTTP POST requests. Otherwise VSI could install a module such as Mod_evasive Apache Module or DDOS Deflate Module. Both monitor IP addresses and ban IPs that try to open too many Connections.
+Apache web server has several different modules that can be used to mitigate DDoS attacks. One method is to require captcha tests for new HTTP POST requests. Otherwise VSI could install a module such as Mod_evasive Apache Module or DDOS Deflate Module. Both monitor IP addresses and ban IPs that try to open too many Connections.
